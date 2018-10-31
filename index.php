@@ -2,5 +2,8 @@
 
 
 $query= require "core/bootstrap.php";
-$tasks= $query->selectAll('todos');
-var_dump($tasks);
+
+$router = new Router();
+require 'routes.php';
+
+require $router->direct('about/culture');
