@@ -3,6 +3,6 @@ class Request
 {
     public static function uri()
     {
-        return Router::load('routes.php');
+        return $uri=trim($_SERVER['REQUEST_URI'] , '/');
     }
 }

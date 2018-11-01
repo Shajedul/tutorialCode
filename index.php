@@ -8,7 +8,5 @@ $query= require "core/bootstrap.php";
 //$uri=trim($_SERVER['REQUEST_URI'] , '/');
 //require $router->direct($uri);
 
-
-$uri=trim($_SERVER['REQUEST_URI'] , '/');
-$router = Request::uri();
-require $router -> direct($uri);
+$router = Router::load('routes.php');
+require $router -> direct(Request::uri());
