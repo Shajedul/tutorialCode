@@ -1,10 +1,11 @@
 <?php
-
+$app = [];
 require "core/database/Connection.php";
 require "core/database/QueryBuilder.php";
 require "core/Request.php";
 require "core/router.php";
-$config = require "config.php";
-return new QueryBuilder(
-    connection::make($config['database'])
+$app['config'] = require "config.php";
+
+$app['database'] = new QueryBuilder(
+    connection::make($app['config']['database'])
 );
